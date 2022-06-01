@@ -1,0 +1,177 @@
+.hrline {
+    padding-bottom: 1em;
+    border-bottom: 5px solid #bcc3ba;
+    font-family: "Copperplate", "Copperplate Gothic Light", fantasy;
+    font-size: 1.5em;
+    background-color: #dae2d8;
+    padding-top: 2em;
+    margin: 0 2em 1em 2em;
+}
+
+.table {
+    font-size: 0.7em;
+    display: inline-block;
+    margin: 0.6em;
+}
+
+.table-day {
+    display: inline-block;
+    margin: 0.1em 0.3em;
+}
+.table-day div {
+    margin: 0.5em auto;
+}
+
+input[type="time"] {
+    width: 2.8em;
+    font-size: 1.3em;
+    padding: 0;
+    margin: 0.08em;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0.6em;
+    background-color: rgb(218, 226, 216);
+    border: 0.115em solid rgb(188, 195, 186);
+    cursor: pointer;
+}
+
+input[type="time"]:hover {
+    box-shadow: 0 0 5px green;
+}
+
+input[type="time"]:focus {
+    box-shadow: 0 0 3px #2196F3;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+select,
+input[type="text"],
+input[type="number"] {
+    font-size: 1.3em;
+    width: 12.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0.6em;
+    background-color: rgb(218, 226, 216);
+    border: 0.115em solid rgb(188, 195, 186);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+select,
+input[type="text"]:hover,
+input[type="number"]:hover {
+    box-shadow: 0 0 5px green;
+}
+
+select,
+input[type="text"]:focus,
+input[type="number"]:focus {
+    box-shadow: 0 0 3px #2196F3;
+}
+
+.working {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    justify-items: left;
+    border-bottom: 1px dotted rgb(218, 226, 216);
+}
+.notesbox {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    border-bottom: 1px solid rgb(188, 195, 186);
+}
+
+.notesbox .notes {
+    display: inline-block;
+}
+.notesbox input {
+    margin: 1em;
+    margin-left: 2em;
+}
+
+.notesbox .notes p {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    margin: 0.6em;
+    font-size: 1.05em;
+    text-align: left;
+}
+.notesbox .notes p span{
+    margin-right: 1.4em;
+    color: rgb(134, 29, 29);
+    border: 0.115em solid rgb(134, 29, 29);
+    width: 1em;
+    height: 0.5em;
+    padding: 0 0 1em 0.4em;
+    border-radius: 8px;
+    display: inline-block;
+    background-color: rgb(212, 189, 189);
+    cursor: pointer;
+}
+
+.notesbox .notes p span:hover {
+    box-shadow: 0 0 3px red;
+    color: darkred;
+}
+
+.box button {
+    margin: 1em auto;
+    display: block;
+}
+
+.addLiftBox {
+    padding: 2em;
+}
+
+.addLiftBox div {
+    padding: 0.6em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.addLiftBox div label {
+    text-align: right;
+    padding-right: 0.6em;
+    font-size: 1.3em;
+}
+.addLiftBox div input {
+    text-align: left;
+    margin-left: 0.6em;
+}
+
+.home-resortbox {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr 2fr 2fr 1fr;
+    gap: 25px 3px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    align-items: center;
+    justify-items: center;
+    border-bottom: 1px dotted rgb(218, 226, 216);
+}
+input[type='date'] {
+    font-size: 1.3em;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0.6em;
+    width: 7.1em;
+    background-color: rgb(218, 226, 216);
+    border: 0.115em solid rgb(188, 195, 186);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.justify-start {
+    justify-self: start;
+}
+
+.easy {
+    background-color: #2195f321;
+}
+.medium {
+    background-color: #ee6a6a23;
+}
+.hard {
+    background-color: #0505051a;
+}

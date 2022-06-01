@@ -1,0 +1,65 @@
+.switchbox {
+    font-size: 1.5em;
+    position: relative;
+    margin: 0.6em;
+}
+
+.switchbox input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.leverswitch {
+    position: absolute;
+    cursor: pointer;
+    height: 1em;
+    width: 1.8em;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0.6em;
+    background-color: rgb(218, 226, 216);
+    border: 0.115em solid rgb(188, 195, 186);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.leverswitch::before {
+    position: absolute;
+    content: "";
+    width: 1.1em;
+    height: 1.1em;
+    left: -0.05em;
+    bottom: -0.07em;
+    background-color: rgb(155, 160, 153);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.switchbox input:focus + .leverswitch {
+    box-shadow: 0 0 3px #2196F3;
+}
+
+.switchbox input:hover + .leverswitch {
+    box-shadow: 0 0 5px green;
+}
+
+.switchbox input:checked + .leverswitch {
+    background-color: lightgreen;
+}
+
+.switchbox input:checked + .leverswitch:before {
+    -webkit-transform: translateX(0.79em);
+    -ms-transform: translateX(0.79em);
+    transform: translateX(0.79em);
+    background-color: green;
+}
+
+.levertitle {
+    margin-left: 2.2em;
+    text-transform: capitalize;
+    font-size: 0.9em;
+}

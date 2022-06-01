@@ -1,0 +1,25 @@
+nav {
+    border-top: 2px solid #282c34;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0.4em auto 0.2em auto;
+}
+nav ul a {
+    color: white;
+    padding: 0.5em;
+}
+
+nav ul a:hover {
+    color: rgb(218, 226, 216);
+}
+
+.selected {
+    background-color: #282c34;
+    color: rgb(218, 226, 216);
+}
+
+nav li {
+    display: inline;
+    margin: 0 1em;
+}

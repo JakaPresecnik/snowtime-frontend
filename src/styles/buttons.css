@@ -1,0 +1,81 @@
+.addNew {
+    width: 2em;
+    height: 2em;
+    font-size: 2em;
+    border-radius: 50%;
+    border: 1px solid green;
+    color: green;
+    background-color: #c3dabe;
+    cursor: pointer;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+}
+
+.addNew:hover,
+.addFirst:hover {
+    box-shadow: 0 0 3px #008000;
+}
+
+.addFirst {
+    border: 2px solid green;
+    color: green;
+    font-weight: bold;
+    padding: 0.7em;
+    border-radius: 1em;
+    background-color: #c3dabe;
+    cursor: pointer;
+}
+
+.saveChanges {
+    border: 2px solid #004B4B;
+    color: #004B4B;
+    font-weight: bold;
+    padding: 0.7em;
+    border-radius: 1em;
+    background-color: #cad1e0;
+    cursor: pointer;
+}
+
+.saveChanges:hover {
+    box-shadow: 0 0 3px #004B4B;
+}
+
+.saveChanges:disabled {
+    background-color: rgb(218, 226, 216);
+    color: rgb(188, 195, 186);
+    border: 2px solid rgb(188, 195, 186);
+    cursor: not-allowed;
+}
+
+.saveChanges:disabled:hover {
+    box-shadow: none;
+}
+
+.back {
+    border: 2px solid #4a4b00;
+    color: #4a4b00;
+    font-weight: bold;
+    padding: 0.7em;
+    border-radius: 1em;
+    background-color: #d6dbbe;
+    cursor: pointer;
+}
+
+.back:hover {
+    box-shadow: 0 0 3px #4a4b00;
+}
+
+.editChanges {
+    margin : 0;
+    padding: 0.5em 0.7em 0.3em 0.7em;
+    background-color: #cadbe0;
+    border: 2px solid #004b32;
+    color: #004b32;
+    border-radius: 1em;
+    cursor: pointer;
+}
+.editChanges:hover {
+    box-shadow: 0 0 3px #004b32;
+}

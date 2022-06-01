@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css';
+import Operating from './components/Operating';
+import AddLift from './components/AddLift';
+import EditLift from './components/EditLift';
+import AddSlope from './components/AddSlope';
+import EditSlope from './components/EditSlope';
 
 function App() {
+  const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+  const teden = ['PON', 'TOR', 'SRE', 'ČET', 'PET', 'SOB', 'NED']
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header"></header>
+        <Routes>
+          <Route 
+            path='/operating/*' 
+            exact 
+            element={<Operating weekdays={weekdays} teden={teden} />}/>
+          <Route path='/addLift' element={<AddLift />} />
+          <Route path='/addSlope' element={<AddSlope />} />
+          <Route path='/lifts/:liftName' element={<EditLift />} />
+          <Route path='/slopes/:slopeName' element={<EditSlope />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
