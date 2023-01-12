@@ -25,7 +25,7 @@ function EditLift (props) {
         e.preventDefault();
         setLoading(true)
         try {
-            const res = await fetch('http://127.0.0.1:5000/Golte/slopes', {
+            const res = await fetch(`http://127.0.0.1:5000/${props.resort}/slopes`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'

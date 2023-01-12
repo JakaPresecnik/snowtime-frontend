@@ -8,12 +8,12 @@ function OperatingLifts (props) {
     const [loading, setLoading] = useState(true);
     // Used to trigger re-render
     const [toggler, setToggler] = useState(false);
-    const {weekdays, teden} = props;
+    const {weekdays, teden, resort} = props;
 
     useEffect(() => {
         (async () => {
             try {
-                const res = await fetch('http://127.0.0.1:5000/Golte/lifts')
+                const res = await fetch(`http://127.0.0.1:5000/${resort}/lifts`)
                 const resData = await res.json();
                 setData(resData)
                 setLoading(false)
@@ -58,6 +58,7 @@ function OperatingLifts (props) {
             setToggler(!toggler)
         }
     }
+    
     const handleDeleteNote = (i, j) => {
         data.lifts[i].notes.splice(j, 1);
         data.lifts[i].notes_count -= 1;
@@ -67,7 +68,7 @@ function OperatingLifts (props) {
         e.preventDefault();
         setLoading(true)
         try {
-            const res = await fetch('http://127.0.0.1:5000/Golte/lifts', {
+            const res = await fetch(`http://127.0.0.1:5000/${resort}/lifts`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -98,7 +99,7 @@ function OperatingLifts (props) {
                     <h3 className="hrline">{data.error}</h3>
                     <p>{data.message}</p>
                     <p>Za vnos naprav pritisni spodnji gumb:</p>
-                    <Link to={{pathname: '/addSlope'}}><button className='addFirst'>Dodaj progo</button></Link>
+                    <Link to={{pathname: '/addLift'}}><button className='addFirst'>Dodaj napravo</button></Link>
                 </div>
             )
         }else {
@@ -150,7 +151,7 @@ function OperatingLifts (props) {
                         </div>
                     </div>
                 ))}
-                <Link to={{pathname: '/addLift'}}><button className='addNew'>+</button></Link>
+                <Link to={{pathname: `/addLift`}}><button className='addNew'>+</button></Link>
                 <button className='saveChanges' onClick={e => handleUpdate(e)}>Shrani spremembe</button>
             </div>
         )

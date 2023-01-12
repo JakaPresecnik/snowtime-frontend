@@ -24,12 +24,12 @@ function EditLift (props) {
     const handleIdChange = (e) => {
         setId(e.target.value);
     }
-
+console.log(props)
     const handleUpdate = async (e, liftName) => {
         e.preventDefault();
         setLoading(true)
         try {
-            const res = await fetch('http://127.0.0.1:5000/Golte/lifts', {
+            const res = await fetch(`http://127.0.0.1:5000/${props.resort}/lifts`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'

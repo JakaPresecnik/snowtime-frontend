@@ -6,21 +6,12 @@ function OperatingResort (props) {
     const [loading, setLoading] = useState(true);
     const [toggler, setToggler] = useState(false);
 
-    const {weekdays, teden} = props;
-
+    const {weekdays, teden, resort, resortData} = props;
+    
     useEffect(() => {
-        (async () => {
-            try {
-                const res = await fetch('http://127.0.0.1:5000/Golte')
-                const resData = await res.json();
-
-                setData(resData)
-                setLoading(false)
-            } catch(e) {
-                console.log(e)
-            }
-        })();
-    }, [])
+        setData(resortData)
+        setLoading(false)
+    }, [resortData])
 
     const handleWorkingChange = () => {
         data.working = !data.working
@@ -86,7 +77,7 @@ function OperatingResort (props) {
         e.preventDefault();
         setLoading(true)
         try {
-            const res = await fetch('http://127.0.0.1:5000/Golte', {
+            const res = await fetch(`http://127.0.0.1:5000/${resort}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -101,7 +92,6 @@ function OperatingResort (props) {
         }
     }
     
-
     if(loading) {
         return (
             <div>
@@ -200,7 +190,6 @@ function OperatingResort (props) {
                     style={{marginTop: "3em"}} 
                     className='saveChanges'
                     onClick={e => handleUpdate(e)}
-                    
                 >Shrani spremembe</button>
             </div>
         )

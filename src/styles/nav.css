@@ -1,0 +1,17 @@
+.right-nav {
+    font-size: 0.7em;
+    display: flex;
+}
+.resort-icon {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.navbar {
+    align-self: center;
+}
+.profile {
+    text-align: right;
+    padding-right: 2.5em;
+}
+.profile li {
+    margin: 0;
+}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ReactLoading from 'react-loading';
 
-function AddLift () {
+function AddLift (props) {
     const [data, setData] = useState(null);
     const [name, setName] = useState(null);
     const [type, setType] = useState(null);
@@ -27,7 +27,7 @@ function AddLift () {
         e.preventDefault();
         setLoading(true)
         try {
-            const res = await fetch('http://127.0.0.1:5000/Golte/lifts', {
+            const res = await fetch(`http://127.0.0.1:5000/${props.resort}/lifts`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

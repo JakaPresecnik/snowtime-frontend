@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ReactLoading from 'react-loading';
 
-function AddSlope () {
+function AddSlope (props) {
     const [data, setData] = useState(null)
     const [name, setName] = useState(null)
     const [id, setId] = useState(null)
@@ -23,7 +23,7 @@ function AddSlope () {
         e.preventDefault();
         setLoading(true)
         try {
-            const res = await fetch('http://127.0.0.1:5000/Golte/slopes', {
+            const res = await fetch(`http://127.0.0.1:5000/${props.resort}/slopes`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

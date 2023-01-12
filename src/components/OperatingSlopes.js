@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import editLogo from '../images/edit.svg';
 
 
-function OperatingSlopes() {
+function OperatingSlopes(props) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [toggler, setToggler] = useState(false);
@@ -12,7 +12,7 @@ function OperatingSlopes() {
     useEffect(() => {
         (async () => {
             try {
-                const res = await fetch('http://127.0.0.1:5000/Golte/slopes')
+                const res = await fetch(`http://127.0.0.1:5000/${props.resort}/slopes`)
                 const resData = await res.json();
                 setData(resData)
                 setLoading(false)
@@ -55,7 +55,7 @@ function OperatingSlopes() {
         e.preventDefault();
         setLoading(true)
         try {
-            const res = await fetch('http://127.0.0.1:5000/Golte/slopes', {
+            const res = await fetch(`http://127.0.0.1:5000/${props.resort}/slopes`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -86,6 +86,7 @@ function OperatingSlopes() {
                     <h3 className="hrline">{data.error}</h3>
                     <p>{data.message}</p>
                     <p>Za vnos prog pritisni spodnji gumb:</p>
+                    <Link to={{pathname: '/addSlope'}}><button className='addFirst'>Dodaj progo</button></Link>
                 </div>
             )
         }else {
