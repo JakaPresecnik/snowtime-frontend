@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 import ReactLoading from 'react-loading';
 
 function OperatingResort (props) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [toggler, setToggler] = useState(false);
+    const { getAccessTokenSilently } = useAuth0();
+    const [token, setToken] = useState(null);
 
     const {weekdays, teden, resort, resortData} = props;
     
@@ -77,10 +80,16 @@ function OperatingResort (props) {
         e.preventDefault();
         setLoading(true)
         try {
-            const res = await fetch(`http://127.0.0.1:5000/${resort}`, {
+            const token = await getAccessTokenSilently({
+                audience: 'resorts'
+            });
+            setToken(token)
+
+            const res = await fetch(`http://api.jpdum.com/${resort}`, {
                 method: 'PATCH',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    Authorization:`Bearer ${token}`
                 },
                 body: JSON.stringify(data)
             });

@@ -3,12 +3,15 @@ import ReactLoading from 'react-loading';
 import { Link } from 'react-router-dom';
 import Select from 'react-select'
 import countryList from 'react-select-country-list'
+import { useAuth0 } from '@auth0/auth0-react';
 
 function AddResort(props) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [country, setCountry] = useState('');
     const options = useMemo(() => countryList().getData(), [])
+    const { getAccessTokenSilently } = useAuth0();
+    const [token, setToken] = useState(null);
     
     const { resort, user } = props;
 
@@ -21,7 +24,11 @@ function AddResort(props) {
 
         setLoading(true);
         try {
-            const res = await fetch(`http://127.0.0.1:5000/${resort}`, {
+            const token = await getAccessTokenSilently({
+                audience: 'resorts'
+            });
+            setToken(token)
+            const res = await fetch(`http://api.jpdum.com/${resort}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

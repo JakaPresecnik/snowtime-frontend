@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ReactLoading from 'react-loading';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function AddLift (props) {
     const [data, setData] = useState(null);
@@ -9,6 +10,8 @@ function AddLift (props) {
     const [loading, setLoading] = useState(false);
     const [capacity, setCapacity] = useState(null);
     const [id, setId] = useState(null);
+    const { getAccessTokenSilently } = useAuth0();
+    const [token, setToken] = useState(null);
 
     const handleNameChange = (e) => {
         setName(e.target.value);
@@ -27,10 +30,15 @@ function AddLift (props) {
         e.preventDefault();
         setLoading(true)
         try {
-            const res = await fetch(`http://127.0.0.1:5000/${props.resort}/lifts`, {
+            const token = await getAccessTokenSilently({
+                audience: 'resorts'
+            });
+            setToken(token)
+            const res = await fetch(`http://api.jpdum.com/${props.resort}/lifts`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    Authorization:`Bearer ${token}`
                 },
                 body: JSON.stringify({
                      'name': name,
