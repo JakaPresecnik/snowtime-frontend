@@ -16,7 +16,7 @@ function OperatingLifts (props) {
     useEffect(() => {
         (async () => {
             try {
-                const res = await fetch(`http://api.jpdum.com/${resort}/lifts`)
+                const res = await fetch(`https://api.jpdum.com/${resort}/lifts`)
                 const resData = await res.json();
                 setData(resData)
                 setLoading(false)
@@ -76,7 +76,7 @@ function OperatingLifts (props) {
             });
             setToken(token)
 
-            const res = await fetch(`http://api.jpdum.com/${resort}/lifts`, {
+            const res = await fetch(`https://api.jpdum.com/${resort}/lifts`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

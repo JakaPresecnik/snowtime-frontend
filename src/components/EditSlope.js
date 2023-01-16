@@ -32,7 +32,7 @@ function EditLift (props) {
                 audience: 'resorts'
             });
             setToken(token)
-            const res = await fetch(`http://api.jpdum.com/${props.resort}/slopes`, {
+            const res = await fetch(`https://api.jpdum.com/${props.resort}/slopes`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

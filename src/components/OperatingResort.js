@@ -85,7 +85,7 @@ function OperatingResort (props) {
             });
             setToken(token)
 
-            const res = await fetch(`http://api.jpdum.com/${resort}`, {
+            const res = await fetch(`https://api.jpdum.com/${resort}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

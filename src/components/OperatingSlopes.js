@@ -14,7 +14,7 @@ function OperatingSlopes(props) {
     useEffect(() => {
         (async () => {
             try {
-                const res = await fetch(`http://api.jpdum.com/${props.resort}/slopes`)
+                const res = await fetch(`https://api.jpdum.com/${props.resort}/slopes`)
                 const resData = await res.json();
                 setData(resData)
                 setLoading(false)
@@ -61,7 +61,7 @@ function OperatingSlopes(props) {
                 audience: 'resorts'
             });
             setToken(token)
-            const res = await fetch(`http://127.0.0.1:5000/${props.resort}/slopes`, {
+            const res = await fetch(`https://api.jpdum.com//${props.resort}/slopes`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

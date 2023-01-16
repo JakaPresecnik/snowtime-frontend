@@ -18,7 +18,7 @@ function Operating(props) {
     useEffect(() => {
         (async () => {
             try {
-                const res = await fetch(`http://api.jpdum.com/${resort}`)
+                const res = await fetch(`https://api.jpdum.com/${resort}`)
                 const resData = await res.json();
 
                 setData(resData)

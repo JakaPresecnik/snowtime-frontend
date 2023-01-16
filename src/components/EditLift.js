@@ -36,7 +36,7 @@ console.log(props)
                 audience: 'resorts'
             });
             setToken(token)
-            const res = await fetch(`http://api.jpdum.com/${props.resort}/lifts`, {
+            const res = await fetch(`https://api.jpdum.com/${props.resort}/lifts`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

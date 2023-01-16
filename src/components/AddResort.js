@@ -28,7 +28,7 @@ function AddResort(props) {
                 audience: 'resorts'
             });
             setToken(token)
-            const res = await fetch(`http://api.jpdum.com/${resort}`, {
+            const res = await fetch(`https://api.jpdum.com/${resort}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
