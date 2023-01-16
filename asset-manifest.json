@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.a08a9e5e.css",
-    "main.js": "/static/js/main.ffb7598c.js",
-    "static/media/edit.svg": "/static/media/edit.c931ecb6f0076a6c0fefb3f9495ce28d.svg",
-    "index.html": "/index.html",
-    "main.a08a9e5e.css.map": "/static/css/main.a08a9e5e.css.map",
-    "main.ffb7598c.js.map": "/static/js/main.ffb7598c.js.map"
+    "main.css": "/snowtime-frontend/static/css/main.a08a9e5e.css",
+    "main.js": "/snowtime-frontend/static/js/main.7f245d6c.js",
+    "static/media/edit.svg": "/snowtime-frontend/static/media/edit.c931ecb6f0076a6c0fefb3f9495ce28d.svg",
+    "index.html": "/snowtime-frontend/index.html",
+    "main.a08a9e5e.css.map": "/snowtime-frontend/static/css/main.a08a9e5e.css.map",
+    "main.7f245d6c.js.map": "/snowtime-frontend/static/js/main.7f245d6c.js.map"
   },
   "entrypoints": [
     "static/css/main.a08a9e5e.css",
-    "static/js/main.ffb7598c.js"
+    "static/js/main.7f245d6c.js"
   ]
 }
